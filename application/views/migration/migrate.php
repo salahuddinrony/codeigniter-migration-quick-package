@@ -37,8 +37,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
     <div class="row">
         <div class="col-md-9">
             <h1 class="text-center">
-                <i class="glyphicon glyphicon-fire"></i> CodeIgniter Migrate<br>
-                <small>Best way to manage database migrations</small>
+                <i class="glyphicon glyphicon-fire"></i> Database Migration<br>
+                <small>Best way to manage database tables</small>
             </h1>
         </div>
         <div class="col-md-3">
@@ -53,6 +53,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
             <a title="Logout" href="<?php echo base_url('logout'); ?>">
                 <i class="glyphicon glyphicon-off"></i> <span class="text">Logout</span>
             </a>
+            <h2 class="text-center0"><?php echo $companyname; ?></h2>
         </div>
     </row>
 
@@ -154,6 +155,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     if (r.type === 'success') {
                         $('#migrations').children('tr').removeClass('success');
                         btn.parent().parent().addClass('success');
+                        location.reload(true);
                     }
                     btn.button('reset');
                 }, 'json').fail(function () {
